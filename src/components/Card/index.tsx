@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import { type ComponentProps } from 'react';
+import { Badge as BadgeShadcn } from '../ui/badge';
 
 const Root = ({ children, ...props }: ComponentProps<'div'>) => {
   return (
@@ -39,7 +40,7 @@ const Title = ({ children, ...props }: ComponentProps<'h2'>) => {
 
 const Badge = ({ children, ...props }: ComponentProps<'span'>) => {
   return (
-    <span
+    <BadgeShadcn
       {...props}
       className={cn(
         'bg-content-primary rounded-full px-2 py-1 text-xs font-bold w-fit',
@@ -47,7 +48,7 @@ const Badge = ({ children, ...props }: ComponentProps<'span'>) => {
       )}
     >
       {children}
-    </span>
+    </BadgeShadcn>
   );
 };
 

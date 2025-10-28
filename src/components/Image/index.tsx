@@ -17,7 +17,7 @@ export const Image = ({
     return (
       <div
         className={cn(
-          'w-full h-full flex items-center justify-center bg-gray-100 text-gray-500 text-sm',
+          'w-full h-full flex items-center justify-center bg-gray-500 text-gray-100 text-sm',
           className,
         )}
       >
@@ -29,7 +29,7 @@ export const Image = ({
   return (
     <div className={cn('relative w-full h-full', className)}>
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-gray-200 rounded-md" />
+        <div className="absolute inset-0 animate-pulse bg-gray-600 rounded-md" />
       )}
 
       <img
