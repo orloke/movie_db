@@ -15,7 +15,6 @@ export const Home = () => {
           <Card.CardBadge>8.5</Card.CardBadge>
         </Card.CardDescription>
       </Card.CardRoot>
-
     </div>
   );
 };
