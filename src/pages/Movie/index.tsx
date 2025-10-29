@@ -8,14 +8,14 @@ export function Movie() {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <div className="h-full grid grid-cols-12 md:gap-10 gap-y-10">
+    <div className="h-full grid grid-cols-12 md:gap-10 gap-y-10 md:px-8 px-4">
       <Image
         src={`https://image.tmdb.org/t/p/w500/${id}.jpg`}
         errorText="Imagem não carregada"
         className="col-span-12 md:col-span-6 rounded-2xl md:h-full h-80"
       />
       <div className="col-span-12 md:col-span-6 flex flex-col gap-4">
-        <h1 className="text-white text-4xl font-bold">Nome do filme</h1>
+        <h1 className="title-page">Nome do filme</h1>
         <div className="flex gap-4">
           <Badge>Ação</Badge>
           <Badge>Aventura</Badge>

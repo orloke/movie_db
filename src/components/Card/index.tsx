@@ -2,12 +2,27 @@ import { cn } from '@/lib/utils';
 import { type ComponentProps } from 'react';
 import { Badge as BadgeShadcn } from '../ui/badge';
 
-const Root = ({ children, ...props }: ComponentProps<'div'>) => {
+interface RootProps extends ComponentProps<'div'>{
+  onClick?: () => void;
+  disabled?: boolean;
+}
+
+const Root = ({ children, ...props }: RootProps) => {
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if ((e.key === 'Enter' || e.key === ' ') && props.onClick) {
+      e.preventDefault();
+      props.onClick();
+    }
+  };
+
   return (
     <div
       {...props}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
       className={cn(
-        'bg-background-500 w-full flex flex-col h-96 relative rounded-2xl justify-end overflow-hidden',
+        'bg-background-500 w-full flex flex-col h-96 relative justify-end overflow-hidden outline-none rounded-2xl focus-visible:ring-2 focus-visible:ring-primary cursor-pointer hover:ring-primary ring-2 ring-transparent transition-all',
         props.className,
       )}
     >
@@ -60,6 +75,10 @@ const Button = ({ children, ...props }: ComponentProps<'button'>) => {
         'bg-background-700 rounded-full p-2 w-fit cursor-pointer hover:scale-110 transition-all',
         props.className,
       )}
+      onClick={(e) => {
+        e.stopPropagation();
+        if (props.onClick) props.onClick(e);
+      }}
     >
       {children}
     </button>

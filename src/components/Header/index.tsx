@@ -19,7 +19,7 @@ export const Header = () => {
           <Home className="w-6 h-6" />
           <span className='md:flex hidden'>Home</span>
         </Link>
-        <Link to="/" className={buttonVariants({ variant: 'secondary' })}>
+        <Link to="/favorites" className={buttonVariants({ variant: 'secondary' })}>
           <Heart className="w-6 h-6" />
           <span className='md:flex hidden'>Favoritos</span>
         </Link>

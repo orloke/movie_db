@@ -32,30 +32,34 @@
   --content-secondary: oklch(0.6 0 0);
 }
 
+@layer components {
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-background-700);
+  }
 
-.scrollbar-custom {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-background-700);
-}
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
-/* Chrome, Edge, Safari */
-.scrollbar-custom::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: var(--color-background-700);
+    border-radius: var(--radius);
+  }
 
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: var(--color-background-700);
-  border-radius: var(--radius);
-}
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--radius);
+    border: 2px solid var(--color-background-700);
+    transition: background-color 0.2s ease;
+  }
 
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary);
-  border-radius: var(--radius);
-  border: 2px solid var(--color-background-700);
-  transition: background-color 0.2s ease;
-}
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background-color: oklch(from var(--color-primary) calc(l + 0.05) c h);
+  }
 
-.scrollbar-custom::-webkit-scrollbar-thumb:hover {
-  background-color: oklch(from var(--color-primary) calc(l + 0.05) c h);
+  .title-page {
+    @apply text-4xl font-bold text-white;
+  }
 }

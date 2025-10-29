@@ -40,7 +40,7 @@ export const Image = ({
           setHasError(true);
         }}
         className={cn(
-          'w-full h-full object-cover transition-opacity duration-300',
+          'w-full h-full object-cover transition-opacity duration-300,',
           isLoading ? 'opacity-0' : 'opacity-100',
         )}
       />
