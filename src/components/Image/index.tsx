@@ -27,7 +27,7 @@ export const Image = ({
   }
 
   return (
-    <div className={cn('relative w-full h-full', className)}>
+    <div className={cn('relative w-full h-full overflow-hidden', className)}>
       {isLoading && (
         <div className="absolute inset-0 animate-pulse bg-gray-600 rounded-md" />
       )}
@@ -40,7 +40,7 @@ export const Image = ({
           setHasError(true);
         }}
         className={cn(
-          'w-full h-full object-cover transition-opacity duration-300,',
+          'w-full h-full object-cover transition-opacity duration-300',
           isLoading ? 'opacity-0' : 'opacity-100',
         )}
       />

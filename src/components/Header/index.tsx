@@ -1,8 +1,7 @@
 import logo from '@/assets/movie.svg';
-import { Heart, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SearchInput } from '../SearchInput';
-import { buttonVariants } from '../ui/button';
+import { NavHeader } from './NavHeader';
 
 export const Header = () => {
   return (
@@ -14,16 +13,7 @@ export const Header = () => {
         </h1>
       </Link>
       <SearchInput />
-      <div className="flex gap-4">
-        <Link to="/" className={buttonVariants({ variant: 'default' })}>
-          <Home className="w-6 h-6" />
-          <span className='md:flex hidden'>Home</span>
-        </Link>
-        <Link to="/favorites" className={buttonVariants({ variant: 'secondary' })}>
-          <Heart className="w-6 h-6" />
-          <span className='md:flex hidden'>Favoritos</span>
-        </Link>
-      </div>
+      <NavHeader />
     </header>
   );
 };

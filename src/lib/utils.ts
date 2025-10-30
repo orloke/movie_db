@@ -1,14 +1,28 @@
 import type { Order } from '@/components/SelectOrder';
-import type { TmdbMovie } from '@/types/popularMovies';
+import type { FavoriteMovie } from '@/types/popularMovies';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+
+const baseUrlImage = import.meta.env.VITE_API_IMAGE_URL;
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const sortedMovies = (movies: TmdbMovie[], order: Order) => {
-  if (!movies?.length) return []
+export const createUrlImage = (imageUrl?: string | null) => {
+  const img = `${baseUrlImage}${imageUrl}`;
+
+  return img;
+};
+
+export const formattedDate = (date?: string) => {
+  if (!date) return '';
+  const dateObject = new Date(date);
+  return dateObject.toLocaleDateString('pt-BR');
+};
+
+export const sortedMovies = (movies: FavoriteMovie[], order: Order) => {
+  if (!movies?.length) return [];
 
   const sorted = [...movies];
 

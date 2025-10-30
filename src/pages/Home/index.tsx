@@ -18,6 +18,7 @@ export const Home = () => {
           imageUrl={movie.poster_path}
           title={movie.title}
           vote_average={movie.vote_average}
+          id={movie.id}
         >
           <FavoriteButtonCard movie={movie} />
         </MovieCard>

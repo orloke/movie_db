@@ -1,4 +1,4 @@
-import EmptyStateFavorite from '@/components/EmptyStateFavorite';
+import {EmptyStateFavorite} from '@/components/EmptyStateFavorite';
 import { MovieCard } from '@/components/MovieCard';
 import { RemoveButtonCard } from '@/components/MovieCard/RemoveButtonCard';
 import { SelectOrder, type Order } from '@/components/SelectOrder';
@@ -35,6 +35,7 @@ export const Favorites = () => {
             imageUrl={movie.poster_path}
             title={movie.title}
             vote_average={movie.vote_average}
+            id={movie.id}
           >
             <RemoveButtonCard idMovie={movie.id} />
           </MovieCard>

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { buttonVariants } from '../ui/button';
 
-export default function EmptyStateFavorite() {
+export function EmptyStateFavorite() {
   return (
     <div className="flex flex-col justify-center items-center h-full text-gray-400 gap-4 -mt-8">
       <img src={logo} alt="logo" className="h-20 w-20" />
