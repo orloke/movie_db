@@ -6,10 +6,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import type { Dispatch, SetStateAction } from 'react';
 
-export const SelectOrder = () => {
+export type Order = 'title-asc' | 'title-desc' | 'release-asc' | 'release-desc';
+
+interface SelectOrderProps {
+  setOrder: Dispatch<SetStateAction<Order>>;
+}
+
+export const SelectOrder = ({ setOrder }: SelectOrderProps) => {
   return (
-    <Select defaultValue="title-asc">
+    <Select defaultValue="title-asc" onValueChange={e => setOrder(e as Order)}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Selecione a ordem" />
       </SelectTrigger>

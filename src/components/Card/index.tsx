@@ -22,7 +22,7 @@ const Root = ({ children, ...props }: RootProps) => {
       onKeyDown={handleKeyDown}
       tabIndex={0}
       className={cn(
-        'bg-background-500 w-full flex flex-col h-96 relative justify-end overflow-hidden outline-none rounded-2xl focus-visible:ring-2 focus-visible:ring-primary cursor-pointer hover:ring-primary ring-2 ring-transparent transition-all',
+        'bg-background-500 w-full flex flex-col h-120 relative justify-end overflow-hidden outline-none rounded-2xl focus-visible:ring-2 focus-visible:ring-primary cursor-pointer hover:ring-primary ring-2 ring-transparent transition-all',
         props.className,
       )}
     >
@@ -47,9 +47,9 @@ const Description = ({ children, ...props }: ComponentProps<'div'>) => {
 
 const Title = ({ children, ...props }: ComponentProps<'h2'>) => {
   return (
-    <h2 {...props} className={cn('text-white font-bold', props.className)}>
+    <p {...props} className={cn('text-white font-bold truncate', props.className)}>
       {children}
-    </h2>
+    </p>
   );
 };
 

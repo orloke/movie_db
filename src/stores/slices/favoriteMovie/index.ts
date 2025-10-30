@@ -1,30 +1,42 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import type { TmdbMovie } from '@/types/popularMovies'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 interface FavoriteMovieState {
-  ids: number[];
+  movies: TmdbMovie[]
 }
 
 const initialState: FavoriteMovieState = {
-  ids: [],
-};
+  movies: [],
+}
 
-export const FavoritesMovies = createSlice({
-  name: 'favorite',
+export const favoritesMoviesSlice = createSlice({
+  name: 'favorites',
   initialState,
   reducers: {
-    toggleFavorite: (state, action: PayloadAction<number>) => {
-      if (state.ids.includes(action.payload)) {
-        state.ids = state.ids.filter((id) => id !== action.payload);
+    toggleFavorite: (state, action: PayloadAction<TmdbMovie>) => {
+      const exists = state.movies.some((movie) => movie.id === action.payload.id)
+      if (exists) {
+        state.movies = state.movies.filter(
+          (movie) => movie.id !== action.payload.id,
+        )
       } else {
-        state.ids.push(action.payload);
+        state.movies.push(action.payload)
       }
     },
     removeFavorite: (state, action: PayloadAction<number>) => {
-      state.ids = state.ids.filter((id) => id !== action.payload);
+      state.movies = state.movies.filter(
+        (movie) => movie.id !== action.payload,
+      )
+    },
+    clearFavorites: (state) => {
+      state.movies = []
     },
   },
-});
+})
 
-export const { toggleFavorite, removeFavorite } = FavoritesMovies.actions;
-export default FavoritesMovies.reducer;
+export const { toggleFavorite, removeFavorite, clearFavorites } =
+  favoritesMoviesSlice.actions
+
+export default favoritesMoviesSlice.reducer
+

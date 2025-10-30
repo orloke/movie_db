@@ -2,21 +2,23 @@ import { Card } from '@/components/Card';
 import { cn } from '@/lib/utils';
 import type { RootState } from '@/stores';
 import { toggleFavorite } from '@/stores/slices/favoriteMovie';
+import type { TmdbMovie } from '@/types/popularMovies';
 import { Heart } from 'lucide-react';
 import type { ComponentProps, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 interface FavoriteButtonCardProps extends ComponentProps<'button'> {
-  idMovie: number;
+  movie: TmdbMovie;
 }
 
-export function FavoriteButtonCard({ idMovie, ...props }: FavoriteButtonCardProps) {
+export function FavoriteButtonCard({ movie, ...props }: FavoriteButtonCardProps) {
   const dispatch = useDispatch();
-  const favorites = useSelector((state: RootState) => state.favoriteMovie.ids);
-  const isFavorite = favorites.includes(idMovie);
+  const favorites = useSelector((state: RootState) => state.favorites.movies);
+
+  const isFavorite = favorites.find((item) => item.id === movie.id);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    dispatch(toggleFavorite(idMovie));
+    dispatch(toggleFavorite(movie));
 
     if (props.onClick) {
       props.onClick(e);
