@@ -2,8 +2,6 @@ import type { FavoriteMovie } from '@/types/popularMovies';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-
-
 interface FavoriteMovieState {
   movies: FavoriteMovie[];
 }
