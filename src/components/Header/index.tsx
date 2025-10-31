@@ -1,6 +1,6 @@
 import logo from '@/assets/movie.svg';
 import { Link } from 'react-router-dom';
-import { SearchInput } from '../SearchInput';
+import { SearchInput } from '@/components/Header/SearchInput';
 import { NavHeader } from './NavHeader';
 
 export const Header = () => {

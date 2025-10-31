@@ -1,4 +1,4 @@
-import {EmptyStateFavorite} from '@/components/EmptyStateFavorite';
+import { EmptyStateFavorite } from '@/components/EmptyStateFavorite';
 import { MovieCard } from '@/components/MovieCard';
 import { RemoveButtonCard } from '@/components/MovieCard/RemoveButtonCard';
 import { SelectOrder, type Order } from '@/components/SelectOrder';
@@ -16,7 +16,14 @@ export const Favorites = () => {
   }, [favorites, order]);
 
   if (favorites.length === 0) {
-    return <EmptyStateFavorite />;
+    return (
+      <EmptyStateFavorite
+        title="Nenhum filme favorito ainda"
+        label="Comece explorando filmes populares e adicione seus favoritos!"
+        labelButton="Explorar Filmes"
+        href="/favorites"
+      />
+    );
   }
 
   return (
