@@ -32,7 +32,6 @@ export function MovieDetailSkeleton() {
           </div>
         </div>
 
-        {/* Botão de Favoritar */}
         <div className="mt-6 h-10 w-40 bg-gray-700/60 rounded-lg" />
       </div>
     </div>

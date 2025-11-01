@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 export const SearchInput = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [value, setValue] = useState(searchParams.get('q') || '');
+  const [value, setValue] = useState(searchParams.get('term') || '');
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,6 +37,7 @@ export const SearchInput = () => {
       placeholder="Buscar filmes..."
       value={value}
       onChange={(e) => setValue(e.target.value)}
+      
     />
   );
 };
