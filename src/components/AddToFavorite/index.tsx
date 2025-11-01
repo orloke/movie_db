@@ -4,13 +4,14 @@ import type { RootState } from '@/stores';
 import { toggleFavorite } from '@/stores/slices/favoriteMovie';
 import type { FavoriteMovie } from '@/types/popularMovies';
 import { Heart } from 'lucide-react';
+import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 interface AddToFavoriteProps {
   movie: FavoriteMovie;
 }
 
-export function AddToFavorite({ movie }: AddToFavoriteProps) {
+export const AddToFavorite = memo(({ movie }: AddToFavoriteProps) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state: RootState) => state.favorites.movies);
 
@@ -29,4 +30,4 @@ export function AddToFavorite({ movie }: AddToFavoriteProps) {
       <span>{isFavorite ? 'Remover dos' : 'Adicionar aos'} favoritos</span>
     </Button>
   );
-}
+})

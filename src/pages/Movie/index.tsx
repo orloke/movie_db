@@ -5,9 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { createUrlImage, formattedDate } from '@/lib/utils';
 import { detailsMovie } from '@/services/tmdbApi/detailsMovie';
 import { useQuery } from '@tanstack/react-query';
+import { memo } from 'react';
 import { redirect, useParams } from 'react-router-dom';
 
-export function Movie() {
+export const Movie = memo(() => {
   const { id } = useParams<{ id: string }>();
 
   const { data: response, isLoading } = useQuery({
@@ -74,4 +75,4 @@ export function Movie() {
       </div>
     </div>
   );
-}
+})

@@ -1,4 +1,4 @@
-export function MovieDetailSkeleton() {
+export const MovieDetailSkeleton = () => {
   return (
     <div className="h-full grid grid-cols-12 md:gap-10 gap-y-10 md:px-8 px-4 animate-pulse">
       <div className="col-span-12 md:col-span-6">

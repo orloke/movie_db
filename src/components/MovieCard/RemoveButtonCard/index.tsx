@@ -9,7 +9,7 @@ interface RemoveButtonCardProps extends ComponentProps<'button'> {
   idMovie: number;
 }
 
-export function RemoveButtonCard({ idMovie, ...props }: RemoveButtonCardProps) {
+export const RemoveButtonCard = ({ idMovie, ...props }: RemoveButtonCardProps) => {
   const dispatch = useDispatch();
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {

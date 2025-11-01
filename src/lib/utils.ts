@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 const baseUrlImage = import.meta.env.VITE_API_IMAGE_URL;
 
-export function cn(...inputs: ClassValue[]) {
+export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
 }
 

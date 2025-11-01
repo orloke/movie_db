@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header';
 import { Outlet } from 'react-router-dom';
 
-export function MainLayout() {
+export const MainLayout = () => {
   return (
     <div className="h-screen flex flex-col bg-background-900">
       <Header />

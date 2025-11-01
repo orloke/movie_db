@@ -10,7 +10,7 @@ interface EmptyStateFavoriteProps {
   href: string;
 }
 
-export function EmptyStateFavorite({ title, label, labelButton, href }: EmptyStateFavoriteProps) {
+export const EmptyStateFavorite = ({ title, label, labelButton, href }: EmptyStateFavoriteProps) => {
   return (
     <div className="flex flex-col justify-center items-center h-full text-gray-400 gap-4 -mt-8">
       <img src={logo} alt="logo" className="h-20 w-20" />

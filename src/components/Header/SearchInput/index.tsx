@@ -1,8 +1,8 @@
 import { Input } from '@/components/ui/input';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
-export const SearchInput = () => {
+export const SearchInput = memo(() => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState(searchParams.get('term') || '');
 
@@ -37,7 +37,7 @@ export const SearchInput = () => {
       placeholder="Buscar filmes..."
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      
+
     />
   );
-};
+});

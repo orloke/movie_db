@@ -42,6 +42,7 @@ export const Search = () => {
         href="/"
       />
     );
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-10  pb-1">
       <InfiniteScrollTrigger

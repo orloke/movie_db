@@ -5,6 +5,7 @@ import { MovieCardSkeleton } from '@/components/MovieCardSkeleton';
 import { popularMovies } from '@/services/tmdbApi/popular';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { Loader } from 'lucide-react';
+import { useMemo } from 'react';
 
 export const Home = () => {
   const { data, fetchNextPage, isFetchingNextPage, isLoading } =
@@ -22,7 +23,9 @@ export const Home = () => {
       initialPageParam: 1,
     });
 
-  const movies = data?.pages.flatMap((page) => page.data?.results);
+  const movies = useMemo(() => {
+    return data?.pages.flatMap((page) => page.data?.results);
+  }, [data]);
 
   if (!movies || !movies.length) return null;
 
