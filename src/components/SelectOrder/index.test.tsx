@@ -68,15 +68,16 @@ describe('SelectOrder Component', () => {
     expect(screen.getByText('Selecione a ordem')).toBeInTheDocument();
   });
 
-  test('deve renderizar todas as 4 opções de ordenação com seus valores corretos', () => {
+  test('deve renderizar todas as 5 opções de ordenação com seus valores corretos', () => {
     render(<SelectOrder setOrder={mockSetOrder} />);
 
     expect(screen.getByText('Título (A-Z)')).toBeInTheDocument();
     expect(screen.getByText('Título (Z-A)')).toBeInTheDocument();
     expect(screen.getByText('Mais recentes')).toBeInTheDocument();
     expect(screen.getByText('Mais antigos')).toBeInTheDocument();
+    expect(screen.getByText('Ordenar por nota (maior-menor)')).toBeInTheDocument();
 
-    expect(mockSelectItemSpy).toHaveBeenCalledTimes(4);
+    expect(mockSelectItemSpy).toHaveBeenCalledTimes(5);
     expect(mockSelectItemSpy).toHaveBeenCalledWith(
       expect.objectContaining({ value: 'title-asc' }),
     );
