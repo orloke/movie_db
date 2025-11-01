@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/select';
 import type { Dispatch, SetStateAction } from 'react';
 
-export type Order = 'title-asc' | 'title-desc' | 'release-asc' | 'release-desc';
+export type Order = 'title-asc' | 'title-desc' | 'release-asc' | 'release-desc' | 'note-desc';
 
 interface SelectOrderProps {
   setOrder: Dispatch<SetStateAction<Order>>;
@@ -26,6 +26,7 @@ export const SelectOrder = ({ setOrder }: SelectOrderProps) => {
           <SelectItem value="title-desc">Título (Z-A)</SelectItem>
           <SelectItem value="release-asc">Mais recentes</SelectItem>
           <SelectItem value="release-desc">Mais antigos</SelectItem>
+          <SelectItem value="note-desc">Ordenar por nota (maior-menor)</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

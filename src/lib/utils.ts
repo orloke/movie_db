@@ -47,6 +47,9 @@ export const sortedMovies = (movies: FavoriteMovie[], order: Order) => {
           new Date(a.release_date).getTime(),
       );
       break;
+    case 'note-desc':
+      sorted.sort((a, b) => b.vote_average - a.vote_average);
+      break;
   }
 
   return sorted;
