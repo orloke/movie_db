@@ -26,7 +26,7 @@ vi.mock('redux-persist', async () => {
     PURGE: 'PURGE',
     REGISTER: 'REGISTER',
     persistStore: vi.fn(),
-    persistReducer: vi.fn((config, reducer) => reducer),
+    persistReducer: vi.fn((reducer) => reducer),
   };
 });
 
