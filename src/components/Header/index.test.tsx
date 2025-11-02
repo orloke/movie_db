@@ -19,7 +19,7 @@ vi.mock('./NavHeader', () => ({
   NavHeader: vi.fn(() => <nav data-testid="nav-header-mock" />),
 }));
 
-vi.mock('@/assets/movie.svg', () => ({
+vi.mock('@/public/movie.svg', () => ({
   default: 'mocked-logo.svg',
 }));
 
