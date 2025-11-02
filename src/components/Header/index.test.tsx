@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { vi, describe, test, expect, beforeEach } from 'vitest';
 import { Header } from './index';
 
-// --- MOCKS ---
+
 vi.mock('react-router-dom', () => ({
   Link: vi.fn(({ to, children, ...rest }) => (
     <a href={to} {...rest}>
