@@ -1,4 +1,4 @@
-import logo from '@/public/movie.svg';
+import logo from '/movie.svg';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { buttonVariants } from '../ui/button';

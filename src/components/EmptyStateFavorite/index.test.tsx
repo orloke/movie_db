@@ -21,7 +21,7 @@ vi.mock('../ui/button', () => ({
   buttonVariants: vi.fn(() => 'button-base-classes'),
 }));
 
-vi.mock('@/public/movie.svg', () => ({
+vi.mock('/movie.svg', () => ({
   default: '/mocked-logo.svg',
 }));
 

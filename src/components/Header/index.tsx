@@ -1,4 +1,4 @@
-import logo from '@/public/movie.svg';
+import logo from '/movie.svg';
 import { Link } from 'react-router-dom';
 import { SearchInput } from '@/components/Header/SearchInput';
 import { NavHeader } from './NavHeader';
